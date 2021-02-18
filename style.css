@@ -1,0 +1,7 @@
+img{
+    width: 300px;
+}
+div#details-food-contan img {
+    width: 150px;
+    margin-left: 30%;
+}
