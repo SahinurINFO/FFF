@@ -49,7 +49,7 @@
                         <p>Category Name: ${meal.strCategory}</p>
                         <p>Weight: ${meal.strMeasure1} ${meal.strCategory}</p>
                         <p>Country: ${meal.strArea}</p>
-                        <p>Food ingredients: ${meal.strIngredient1}, ${meal.strIngredient2}, ${meal.strIngredient3}, ${meal.strIngredient4}, ${meal.strIngredient4}, ${meal.strIngredient6}, ${meal.strIngredient1}</p>
+                        <p>Ingredients: ${meal.strIngredient1}, ${meal.strIngredient2}, ${meal.strIngredient3}, ${meal.strIngredient4}, ${meal.strIngredient4}, ${meal.strIngredient6}, ${meal.strIngredient1}</p>
                         
             `;
             document.getElementById('details-food-contan').innerHTML = singleDetails;
