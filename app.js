@@ -1,8 +1,9 @@
     const searchBtn = document.getElementById('searchItemBtn');
           // API 
           const foodItemShow = async () => {
+            toggleSpinner();
             const searchInput = document.getElementById('searchItem').value;
-            const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`
+            const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`;
             try{
                 const res = await fetch(url);
                 const data = await res.json();
@@ -27,7 +28,9 @@
                 `;
                 rowDiv.innerHTML= singleFood;
                 document.getElementById('foodShoww').appendChild(rowDiv); 
+                toggleSpinner();
             });
+            
           }
 
           const foodDetailsData = async(id) => {
@@ -41,7 +44,7 @@
                   displayError('Sorry, try again!!!')
               }
           };
-           
+          // food details show display 
           const foodDetailsDisplay = meal => {
             const singleDetails = `
                         <img src="${meal.strMealThumb}">
@@ -58,4 +61,19 @@
           const displayError = error => {
               alert(error)
             //   document.getElementById('error-massage').innerText = error;
+          }
+          
+          // Spinner 
+          const toggleSpinner = () => {
+            const spinner = document.getElementById('loading-spinner');
+            let foodd = document.getElementById('foodShoww');
+            spinner.classList.toggle('d-none');
+            foodd.classList.toggle('d-none');
+            // if (show){
+            //   spinner.classList.remove('d-none');
+            // }else{
+            //   spinner.classList.add('d-none')
+            // }
+            
+            
           }
